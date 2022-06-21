@@ -15,7 +15,7 @@ class CatalogServiceImpl : CatalogService {
     //CRUD
     //Create Catalog
     override fun addCatalog(catalog: Catalog): List<Catalog> =
-        catalogRepository.getListCatalog()
+        catalogRepository.addCatalog(catalog)
     //ReadCatalog
     override fun getListCatalog(): List<Catalog> =
         catalogRepository.getListCatalog()
