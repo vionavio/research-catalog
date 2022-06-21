@@ -31,4 +31,8 @@ class CatalogServiceImpl : CatalogService {
     override fun getCatalogById(id: Int): Catalog? =
         catalogRepository.getCatalogById(id)
 
+    override fun updateCatalog(id: Int, catalog: Catalog): Catalog? =
+        catalogRepository.updateCatalog(id, catalog)
+
+
 }

@@ -50,4 +50,14 @@ class CatalogController {
         data = catalogService.getCatalogById(id)
     )
 
+    @PutMapping("/{id}")
+    fun updateCatalog(
+        @RequestBody catalog: Catalog,
+        @PathVariable("id") id: Int
+    ): BaseResponse<Catalog?> = BaseResponse(
+        status = true,
+        message = "success",
+        data = catalogService.updateCatalog(id, catalog)
+    )
+
 }

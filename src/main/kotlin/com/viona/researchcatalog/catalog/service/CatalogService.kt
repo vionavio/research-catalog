@@ -11,4 +11,6 @@ interface CatalogService {
     fun deleteCatalog(id: Int): Catalog?
 
     fun getCatalogById(id: Int): Catalog?
+
+    fun updateCatalog(id: Int, catalog: Catalog): Catalog?
 }
