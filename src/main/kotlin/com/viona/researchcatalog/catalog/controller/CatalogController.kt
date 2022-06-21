@@ -4,11 +4,7 @@ import com.viona.researchcatalog.base.BaseResponse
 import com.viona.researchcatalog.catalog.entity.Catalog
 import com.viona.researchcatalog.catalog.service.CatalogService
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 
 @RestController
@@ -35,4 +31,13 @@ class CatalogController {
             message = "Success",
             data = catalogService.addCatalog(catalog)
         )
+
+    @DeleteMapping("/{id}")
+    fun deleteCatalog(
+        @PathVariable(value = "id") id: Int
+    ): BaseResponse<Catalog?> = BaseResponse(
+        status = true,
+        message = "success",
+        data = catalogService.deleteCatalog(id)
+    )
 }
