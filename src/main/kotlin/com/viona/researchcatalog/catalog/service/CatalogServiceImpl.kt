@@ -24,7 +24,11 @@ class CatalogServiceImpl : CatalogService {
     //delete catalog by id
     override fun deleteCatalog(id: Int): Catalog? =
         catalogRepository.deleteCatalog(id)
+
+
     //show catalog by type
     //search catalog
+    override fun getCatalogById(id: Int): Catalog? =
+        catalogRepository.getCatalogById(id)
 
 }

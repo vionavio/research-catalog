@@ -9,4 +9,6 @@ interface CatalogService {
     fun addCatalog(catalog: Catalog): List<Catalog>
 
     fun deleteCatalog(id: Int): Catalog?
+
+    fun getCatalogById(id: Int): Catalog?
 }
