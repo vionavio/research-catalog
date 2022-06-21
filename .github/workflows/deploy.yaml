@@ -20,7 +20,7 @@ jobs:
               password ${{secrets.HEROKU_API_KEY}}
           machine git.heroku.com
               login ${{secrets.HEROKU_EMAIL}}
-              password ${{secrets.HEROKU_USER_API_KEY}}
+              password ${{secrets.HEROKU_API_KEY}}
           EOF
       - name: Add heroku remote
         run: heroku git:remote --app=${{secrets.HEROKU_USER_APP_NAME}}
