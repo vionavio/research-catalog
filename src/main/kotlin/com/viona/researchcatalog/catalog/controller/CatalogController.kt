@@ -5,6 +5,8 @@ import com.viona.researchcatalog.catalog.entity.Catalog
 import com.viona.researchcatalog.catalog.service.CatalogService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -22,5 +24,15 @@ class CatalogController {
             status = true,
             message = "Success",
             data = catalogService.getListCatalog()
+        )
+
+    @PostMapping
+    fun addCatalog(
+        @RequestBody catalog: Catalog
+    ): BaseResponse<List<Catalog>> =
+        BaseResponse(
+            status = true,
+            message = "Success",
+            data = catalogService.addCatalog(catalog)
         )
 }

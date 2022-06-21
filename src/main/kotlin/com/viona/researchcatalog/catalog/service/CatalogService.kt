@@ -5,4 +5,6 @@ import com.viona.researchcatalog.catalog.entity.Catalog
 interface CatalogService {
 
     fun getListCatalog(): List<Catalog>
+
+    fun addCatalog(catalog: Catalog): List<Catalog>
 }

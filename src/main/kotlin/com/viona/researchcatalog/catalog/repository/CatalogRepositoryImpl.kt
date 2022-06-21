@@ -20,5 +20,12 @@ class CatalogRepositoryImpl : CatalogRepository {
     override fun getListCatalog(): List<Catalog> =
         catalogCollection().find().toList()
 
+    override fun addCatalog(catalog: Catalog): List<Catalog> {
+        val insert = catalogCollection().insertOne(catalog)
+
+        return if (insert.wasAcknowledged()) getListCatalog()
+        else throw java.lang.IllegalStateException("insert gagal")
+    }
+
 
 }

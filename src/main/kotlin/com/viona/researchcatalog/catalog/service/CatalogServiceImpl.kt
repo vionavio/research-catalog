@@ -14,9 +14,12 @@ class CatalogServiceImpl : CatalogService {
 
     //CRUD
     //Create Catalog
+    override fun addCatalog(catalog: Catalog): List<Catalog> =
+        catalogRepository.getListCatalog()
     //ReadCatalog
     override fun getListCatalog(): List<Catalog> =
         catalogRepository.getListCatalog()
+
     //Update Catalog
     //delete catalog by id
     //show catalog by type
