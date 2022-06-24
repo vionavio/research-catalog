@@ -4,7 +4,6 @@ import com.viona.researchcatalog.base.BaseResponse
 import com.viona.researchcatalog.catalog.entity.Catalog
 import com.viona.researchcatalog.catalog.service.CatalogService
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 
@@ -36,9 +35,8 @@ class CatalogController {
     @DeleteMapping("/{id}")
     fun deleteCatalog(
         @PathVariable(value = "id") id: Int
-    ) : ResponseEntity<Void> {
+    ) {
         catalogService.deleteCatalog(id)
-        return ResponseEntity.noContent().build()
     }
 
     @GetMapping("/{id}")
