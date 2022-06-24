@@ -17,9 +17,8 @@ class CatalogServiceImpl : CatalogService {
     override fun getListCatalog(): List<Catalog> =
         catalogRepository.getListCatalog()
 
-    override fun deleteCatalog(id: Int){
+    override fun deleteCatalog(id: Int): Catalog? =
         catalogRepository.deleteCatalog(id)
-    }
 
     override fun getCatalogById(id: Int): Catalog? =
         catalogRepository.getCatalogById(id)
