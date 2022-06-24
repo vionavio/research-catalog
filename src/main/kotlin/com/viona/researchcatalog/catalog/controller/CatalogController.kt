@@ -35,11 +35,7 @@ class CatalogController {
     @DeleteMapping("/{id}")
     fun deleteCatalog(
         @PathVariable(value = "id") id: Int
-    ): BaseResponse<Catalog?> = BaseResponse(
-        status = true,
-        message = "success",
-        data = catalogService.deleteCatalog(id)
-    )
+    ){}
 
     @GetMapping("/{id}")
     fun getCatalogById(
