@@ -35,7 +35,7 @@ class CatalogRepositoryImpl : CatalogRepository {
 
     override fun updateCatalog(id: Int, catalog: Catalog): Catalog? {
 
-        val update = catalogCollection().replaceOne(
+        val update = catalogCollection().updateOne(
             catalog::id eq id,
             Catalog(
                 id = catalog.id,
@@ -49,6 +49,6 @@ class CatalogRepositoryImpl : CatalogRepository {
         )
 
         return if (update.wasAcknowledged()) getCatalogById(id)
-        else throw java.lang.IllegalStateException("insert gagal")
+        else throw java.lang.IllegalStateException("update gagal")
     }
 }
