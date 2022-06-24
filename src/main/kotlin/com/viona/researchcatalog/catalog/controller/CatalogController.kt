@@ -38,7 +38,7 @@ class CatalogController {
         @PathVariable(value = "id") id: Int
     ) : ResponseEntity<String> {
         catalogService.deleteCatalog(id)
-        return ResponseEntity.noContent().build()
+        return ResponseEntity.ok("Delete Success")
     }
 
     @GetMapping("/{id}")
