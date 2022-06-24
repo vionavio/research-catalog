@@ -11,23 +11,16 @@ class CatalogServiceImpl : CatalogService {
     @Autowired
     private lateinit var catalogRepository: CatalogRepository
 
-
-    //CRUD
-    //Create Catalog
     override fun addCatalog(catalog: Catalog): List<Catalog> =
         catalogRepository.addCatalog(catalog)
-    //ReadCatalog
+
     override fun getListCatalog(): List<Catalog> =
         catalogRepository.getListCatalog()
 
-    //Update Catalog
-    //delete catalog by id
-    override fun deleteCatalog(id: Int): Catalog? =
+    override fun deleteCatalog(id: Int){
         catalogRepository.deleteCatalog(id)
+    }
 
-
-    //show catalog by type
-    //search catalog
     override fun getCatalogById(id: Int): Catalog? =
         catalogRepository.getCatalogById(id)
 

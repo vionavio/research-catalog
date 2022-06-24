@@ -27,15 +27,16 @@ class CatalogRepositoryImpl : CatalogRepository {
         else throw java.lang.IllegalStateException("insert gagal")
     }
 
-    override fun deleteCatalog(id: Int): Catalog? =
+    override fun deleteCatalog(id: Int) {
         catalogCollection().findOneAndDelete(Catalog::id eq id)
+    }
 
     override fun getCatalogById(id: Int): Catalog? =
         catalogCollection().findOne(Catalog::id eq id)
 
     override fun updateCatalog(id: Int, catalog: Catalog): Catalog? {
 
-        val update = catalogCollection().replaceOne(
+        val update = catalogCollection().updateOne(
             catalog::id eq id,
             Catalog(
                 id = catalog.id,
@@ -49,6 +50,6 @@ class CatalogRepositoryImpl : CatalogRepository {
         )
 
         return if (update.wasAcknowledged()) getCatalogById(id)
-        else throw java.lang.IllegalStateException("insert gagal")
+        else throw java.lang.IllegalStateException("update gagal")
     }
 }
