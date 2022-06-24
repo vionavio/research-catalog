@@ -27,8 +27,9 @@ class CatalogRepositoryImpl : CatalogRepository {
         else throw java.lang.IllegalStateException("insert gagal")
     }
 
-    override fun deleteCatalog(id: Int): Catalog? =
+    override fun deleteCatalog(id: Int) {
         catalogCollection().findOneAndDelete(Catalog::id eq id)
+    }
 
     override fun getCatalogById(id: Int): Catalog? =
         catalogCollection().findOne(Catalog::id eq id)

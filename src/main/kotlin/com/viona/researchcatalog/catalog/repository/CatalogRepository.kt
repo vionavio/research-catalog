@@ -8,7 +8,7 @@ interface CatalogRepository {
 
     fun addCatalog(catalog: Catalog): List<Catalog>
 
-    fun deleteCatalog(id: Int) : Catalog?
+    fun deleteCatalog(id: Int)
 
     fun getCatalogById(id: Int): Catalog?
 
