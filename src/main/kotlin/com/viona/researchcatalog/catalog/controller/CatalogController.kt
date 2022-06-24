@@ -36,7 +36,7 @@ class CatalogController {
     @DeleteMapping("/{id}")
     fun deleteCatalog(
         @PathVariable(value = "id") id: Int
-    ) : ResponseEntity<Void> {
+    ) : ResponseEntity<String> {
         catalogService.deleteCatalog(id)
         return ResponseEntity.noContent().build()
     }
